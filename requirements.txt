@@ -1,9 +1,0 @@
-# Python 3.9 - 3.13. "headless": không cần giao diện đồ họa nên chạy được cả trên server/Docker.
-opencv-python-headless>=4.5,<6
-numpy>=1.21
-openai>=1.0
-python-dotenv>=1.0
-# --- API ---
-fastapi>=0.110
-uvicorn>=0.27
-python-multipart>=0.0.9

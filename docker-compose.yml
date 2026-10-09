@@ -1,8 +1,0 @@
-services:
-  checklist-ocr:
-    build: .
-    image: checklist-ocr
-    ports:
-      - "33253:33253"
-    env_file: .env          # OPENAI_*, API_TOKEN ...
-    restart: unless-stopped
