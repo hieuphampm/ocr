@@ -1,0 +1,14 @@
+services:
+  checklist-ocr:
+    build: .
+    image: checklist-ocr
+    container_name: checklist-ocr
+    ports:
+      - "33253:33253"
+    env_file: .env          # file .env nằm trên server: OPENAI_*, API_TOKEN, MAX_CONCURRENCY, WORKERS ...
+    environment:
+      PORT: "33253"         # cổng trong container cố định, khớp với ports ở trên
+      HOST: "0.0.0.0"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # để gọi model chạy ngay trên server qua http://host.docker.internal:PORT/v1
+    restart: unless-stopped
